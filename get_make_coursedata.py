@@ -2,6 +2,7 @@ import urllib.request as request
 import os
 import sys
 import pandas as pd
+import numpy as np
 from scipy import stats
 
 def get_coursedata_125(url_files):
