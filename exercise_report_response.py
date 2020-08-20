@@ -1,4 +1,5 @@
 import warnings
+from IPython.display import HTML
 
 with warnings.catch_warnings():
     # filter sklearn\externals\joblib\parallel.py:268:
@@ -138,6 +139,7 @@ def submit_exercise_response(title, er_question_list):
 def display_form(er_question_list):
   for q in er_question_list:
     print(q[1])
+    display(HTML('''<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> '''))
     display(q[2])
     print()
 
