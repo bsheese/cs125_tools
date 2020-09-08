@@ -43,10 +43,14 @@ def exercise_time_difficulty_report(exercise_name):
   difficulty_report = column_report(difficult_categories, df_exercise, 'Difficulty')
 
   #display reports
-  display(md(exercise_name))
-  display(difficulty_report)
+  from IPython.core.display import display, HTML
+  outputtime = time_report.to_html(formatters={'Time': '{:,.0%}'.format})
+  outputdif = difficulty_report.to_html(formatters={'Difficulty': '{:,.0%}'.format})
+  
+  display(HTML(exercise_name))
+  display(HTML(outputtime))
   print()
-  display(time_report)
+  display(HTML(outputdif))
 
 
 '''
@@ -113,6 +117,7 @@ def submit_exercise_response(title, er_question_list):
 
       surveyq_list = [
       f'&entry.1690149919={title}',
+      f'&entry.410956418={response_list[8]}',
       f'&entry.1977535025={response_list[0]}',
       f'&entry.266287712={response_list[1]}',
       f'&entry.1353593799={response_list[3]}',
@@ -122,6 +127,10 @@ def submit_exercise_response(title, er_question_list):
       f'&entry.1819709919={response_list[6]}',
       f'&entry.689289533={response_list[7]}'
       f'&entry.1647967109={len(globals())}']
+
+
+
+
 
       surveyq_url = ''
       for q in surveyq_list:
@@ -170,7 +179,10 @@ er_question_list = [
                 ['suggestions',
                  'What suggestions do you have for improving the exercise?',
                   widget_text_bigresponse('Enter your response here','')],
-                 ['corrections',
+                ['corrections',
                   'What corrections should be made (typos. etc)?',
+                  widget_text_bigresponse('Enter your response here','')],
+                ['share',
+                  "Share your notebook.\nSelect 'Share' at the top of the screen. Then select 'Get Link'.\nChange the Link so anyone can view it.\nClick 'Copy Link', then 'Done'. Paste the link here.", 
                   widget_text_bigresponse('Enter your response here','')]
                 ]
