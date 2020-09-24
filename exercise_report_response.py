@@ -1,3 +1,6 @@
+
+
+
 import warnings
 from IPython.display import HTML
 
@@ -104,6 +107,11 @@ def submit_exercise_response(title, er_question_list):
     if er_question_list[0][2].value == '' or er_question_list[1][2].value == '':
       print('Please enter your first and last name in the form above and then rerun this cell.')
       break
+
+    if er_question_list[8][2].value == '':
+      print('Please enter the link to your shared notebook and then rerun this cell.')
+      break
+    
     
     else:
       response_list = []
@@ -146,6 +154,7 @@ def submit_exercise_response(title, er_question_list):
       break
 
 def display_form(er_question_list):
+  print('If this form does not display correctly in Colab, select "Runttime" from the menu at the top, then select "Restart and run all"')
   for q in er_question_list:
     print(q[1])
     display(HTML('''<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> '''))
