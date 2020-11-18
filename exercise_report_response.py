@@ -30,7 +30,7 @@ def column_report(categories, df, series_name):
   return merged
 
 def exercise_time_difficulty_report(exercise_name):
-  pass
+  return None
   # web address of published google sheet
   url_exercise_td = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSUa5PfAqioAzKa0ZUowuLMGm8s3TwvsfN9nqqwxQb0C5RQqzQEdvbHlYdZfEVSPLOgjL_XXrev3Vmx/pub?gid=153373153&single=true&output=csv'
   df = pd.read_csv(url_exercise_td)
