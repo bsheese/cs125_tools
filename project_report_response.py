@@ -80,11 +80,17 @@ def submit_exercise_response(er_question_list):
         if er_question_list[0][2].value.strip() == '' or er_question_list[1][2].value.strip() == '':
             print('Please enter your first and last name in the form above and then rerun this cell.')
             break
-
+        if er_question_list[2][2] == 'None selected':
+            print('Please enter your class name in the form above and then rerun this cell.')
+            break
+        if er_question_list[3][2] == 'None selected':
+            print('Please enter the project name in the form above and then rerun this cell.')
+            break
         if er_question_list[4][2].value.strip() == '':
-            print('Please enter the link to your shared notebook and then rerun this cell.')
+            print('Please enter the link to your shared notebook in the form above and then rerun this cell.')
             break
 
+            
         else:
             response_list = []
             for r in er_question_list:
@@ -137,20 +143,21 @@ er_question_list = [
      widget_text_shortresponse('Enter your last name here', '')],
     ['class',
      'What class was this project for?',
-     widget_drop_down(['CS/DS125',
+     widget_drop_down(['None selected',
+                       'CS/DS125',
                        'DS225',
                        'CS/DS377',
                        'CS380/DS395'],
-                       'Select one', '')],
+                       'None selected', '')],
     ['project',
      'Which project are you submitting?',
-     widget_drop_down(['9.9.2 Visualizations - Multiple',
+     widget_drop_down(['None selected', '9.9.2 Visualizations - Multiple',
                        '10.9.9 Correlations/Scatterplots',
                        '15.9.9 Complete Analysis',
                        '17.9.1 Simple Linear Regression',
                        '18.9.1 Classification',
                        'Other'],
-                       'Select one', '')],
+                       'None selected', '')],
     ['share',
      "Share your notebook.\nSelect 'Share' at the top of the screen. Then select 'Get Link'.\nChange the Link so anyone can view it.\nClick 'Copy Link', then 'Done'. Paste the link here.",
      widget_text_bigresponse('Enter your response here', '')]]
