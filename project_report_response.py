@@ -141,7 +141,7 @@ er_question_list = [
                        'DS225',
                        'CS/DS377',
                        'CS380/DS395'],
-                      'CS/DS377', '')],
+                       'Select one', '')],
     ['project',
      'Which project are you submitting?',
      widget_drop_down(['9.9.2 Visualizations - Multiple',
@@ -150,7 +150,7 @@ er_question_list = [
                        '17.9.1 Simple Linear Regression',
                        '18.9.1 Classification',
                        'Other'],
-                      'Other', '')],
+                       'Select one', '')],
     ['share',
      "Share your notebook.\nSelect 'Share' at the top of the screen. Then select 'Get Link'.\nChange the Link so anyone can view it.\nClick 'Copy Link', then 'Done'. Paste the link here.",
      widget_text_bigresponse('Enter your response here', '')]]
