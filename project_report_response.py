@@ -80,10 +80,10 @@ def submit_exercise_response(er_question_list):
         if er_question_list[0][2].value.strip() == '' or er_question_list[1][2].value.strip() == '':
             print('Please enter your first and last name in the form above and then rerun this cell.')
             break
-        if er_question_list[2][2] == 'None selected':
+        if er_question_list[2][2].value == 'None selected':
             print('Please enter your class name in the form above and then rerun this cell.')
             break
-        if er_question_list[3][2] == 'None selected':
+        if er_question_list[3][2].value == 'None selected':
             print('Please enter the project name in the form above and then rerun this cell.')
             break
         if er_question_list[4][2].value.strip() == '':
