@@ -30,32 +30,33 @@ def column_report(categories, df, series_name):
   return merged
 
 def exercise_time_difficulty_report(exercise_name):
-  # print('Done!')
-  # return None
-  # web address of published google sheet
-  url_exercise_td = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSUa5PfAqioAzKa0ZUowuLMGm8s3TwvsfN9nqqwxQb0C5RQqzQEdvbHlYdZfEVSPLOgjL_XXrev3Vmx/pub?gid=153373153&single=true&output=csv'
-  df = pd.read_csv(url_exercise_td)
+  # # print('Done!')
+  # # return None
+  # # web address of published google sheet
+  # url_exercise_td = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSUa5PfAqioAzKa0ZUowuLMGm8s3TwvsfN9nqqwxQb0C5RQqzQEdvbHlYdZfEVSPLOgjL_XXrev3Vmx/pub?gid=153373153&single=true&output=csv'
+  # df = pd.read_csv(url_exercise_td)
 
-  # restrict to current exercise
-  df_exercise = df[df['Exercise'] == exercise_name] 
+  # # restrict to current exercise
+  # df_exercise = df[df['Exercise'] == exercise_name] 
 
-  # category labelled, used for filling out empty category responses
-  difficult_categories = ['Very Easy', 'Somewhat Easy', 'Neutral', 'Somewhat Difficult', 'Very Difficult']
-  time_categories = ['30 min or less', '31-60 min', '61-90 min', '91-120 min', 'More than 2 hours']
+  # # category labelled, used for filling out empty category responses
+  # difficult_categories = ['Very Easy', 'Somewhat Easy', 'Neutral', 'Somewhat Difficult', 'Very Difficult']
+  # time_categories = ['30 min or less', '31-60 min', '61-90 min', '91-120 min', 'More than 2 hours']
 
-  #generate reports
-  time_report = column_report(time_categories, df_exercise, 'Time')
-  difficulty_report = column_report(difficult_categories, df_exercise, 'Difficulty')
+  # #generate reports
+  # time_report = column_report(time_categories, df_exercise, 'Time')
+  # difficulty_report = column_report(difficult_categories, df_exercise, 'Difficulty')
 
-  #display reports
-  from IPython.core.display import display, HTML
-  outputtime = time_report.to_html(formatters={'Time': '{:,.0%}'.format})
-  outputdif = difficulty_report.to_html(formatters={'Difficulty': '{:,.0%}'.format})
+  # #display reports
+  # from IPython.core.display import display, HTML
+  # outputtime = time_report.to_html(formatters={'Time': '{:,.0%}'.format})
+  # outputdif = difficulty_report.to_html(formatters={'Difficulty': '{:,.0%}'.format})
   
-  display(HTML(exercise_name))
-  display(HTML(outputtime))
+  # display(HTML(exercise_name))
+  # display(HTML(outputtime))
+  # print()
+  # display(HTML(outputdif))
   print()
-  display(HTML(outputdif))
 
 
 '''
