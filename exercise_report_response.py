@@ -56,7 +56,7 @@ def exercise_time_difficulty_report(exercise_name):
   # display(HTML(outputtime))
   # print()
   # display(HTML(outputdif))
-  print()
+  print('Success!')
 
 
 '''
